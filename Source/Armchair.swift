@@ -621,8 +621,7 @@ public enum ArmchairKey: String, Printable {
 
     public var description : String {
         get {
-            return self.toRaw()
-//          return self.rawValue // Changes to rawValue in Xcode 6.1 beta 2
+          return self.rawValue
         }
     }
 }
@@ -1326,7 +1325,7 @@ public class Manager : ArmchairManager {
         //Use the standard openUrl method
         } else {
             let url = NSURL(string: reviewURLString())
-            UIApplication.sharedApplication().openURL(url)
+            UIApplication.sharedApplication().openURL(url!)
         }
 
         if UIDevice.currentDevice().model.rangeOfString("Simulator") != nil {
